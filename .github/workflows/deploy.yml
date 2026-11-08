@@ -36,12 +36,15 @@ jobs:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.VITE_SUPABASE_PUBLISHABLE_KEY }}
 
+      # 💡 핵심 해결: dist 폴더 안의 심볼릭 링크를 찾아 제거/변환합니다.
+      - name: Remove symlinks from build output
+        run: find ./dist -type l -delete
+
       - uses: actions/configure-pages@v5
 
-      # upload-pages-artifact 대신 표준 upload-artifact@v4 사용
-      - uses: actions/upload-artifact@v4
+      # GitHub Pages 전용 공식 업로더와 v4 디플로이 조합 사용
+      - uses: actions/upload-pages-artifact@v3
         with:
-          name: github-pages # 아티팩트 이름을 반드시 github-pages로 지정해야 합니다.
           path: ./dist
 
       - uses: actions/deploy-pages@v4
