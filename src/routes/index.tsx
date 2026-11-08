@@ -13,6 +13,16 @@ import { Divider } from "@/components/wedding/Divider";
 import { Toaster } from "@/components/ui/sonner";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "손정원 · 이다빈의 모바일 청첩장" },
+      { name: "description", content: "손정원과 이다빈의 결혼식에 초대합니다." },
+      { property: "og:title", content: "손정원 · 이다빈의 모바일 청첩장" },
+      { property: "og:description", content: "손정원과 이다빈의 결혼식에 초대합니다. " },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
