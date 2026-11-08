@@ -38,11 +38,11 @@ jobs:
 
       - uses: actions/configure-pages@v5
 
-      # upload-pages-artifact는 v3에서 최신 v4로 변경
-      - uses: actions/upload-pages-artifact@v4
+      # upload-pages-artifact 대신 표준 upload-artifact@v4 사용
+      - uses: actions/upload-artifact@v4
         with:
+          name: github-pages # 아티팩트 이름을 반드시 github-pages로 지정해야 합니다.
           path: ./dist
 
-      # deploy-pages는 v4에서 Node 24를 정식 지원하는 v5로 변경해야 합니다!
-      - uses: actions/deploy-pages@v5
+      - uses: actions/deploy-pages@v4
         id: deployment
