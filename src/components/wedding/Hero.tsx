@@ -1,5 +1,4 @@
-import { ChevronDown, Instagram } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ChevronDown } from "lucide-react";
 import c0 from "@/assets/comic-00.jpg";
 import c1 from "@/assets/comic-01.jpg";
 import c2 from "@/assets/comic-02.jpg";
@@ -23,15 +22,6 @@ export function Hero() {
             loading={i === 0 ? "eager" : "lazy"}
           />
         ))}
-      </div>
-      <div className="flex justify-center bg-background px-6 pb-12 pt-4">
-        <Button asChild variant="link" className="min-h-11">
-          <a href="https://www.instagram.com/dangchoi_/" aria-label="그림 작가 당최 인스타그램">
-            <Instagram aria-hidden="true" />
-            그림 · 당최
-            <span className="text-muted-foreground">@dangchoi_</span>
-          </a>
-        </Button>
       </div>
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 animate-bounce-soft">
         <ChevronDown className="h-7 w-7 text-primary drop-shadow" />
