@@ -38,9 +38,11 @@ jobs:
 
       - uses: actions/configure-pages@v5
 
-      - uses: actions/upload-pages-artifact@v3
+      # upload-pages-artifact는 v3에서 최신 v4로 변경
+      - uses: actions/upload-pages-artifact@v4
         with:
           path: ./dist
 
-      - uses: actions/deploy-pages@v4
+      # deploy-pages는 v4에서 Node 24를 정식 지원하는 v5로 변경해야 합니다!
+      - uses: actions/deploy-pages@v5
         id: deployment
