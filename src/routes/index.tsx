@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Parking } from "@/components/wedding/Parking";  // import 추가
 import { Hero } from "@/components/wedding/Hero";
 import { Invitation } from "@/components/wedding/Invitation";
 import { Contact } from "@/components/wedding/Contact";
@@ -29,6 +30,8 @@ function Index() {
         <Countdown />
         <Divider />
         <Location />
+        <Divider />
+        <Parking />
         <Divider />
         <VenueInfo />
         <Divider />
