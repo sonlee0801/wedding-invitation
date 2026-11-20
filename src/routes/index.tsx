@@ -4,7 +4,6 @@ import { Invitation } from "@/components/wedding/Invitation";
 import { Contact } from "@/components/wedding/Contact";
 import { Countdown } from "@/components/wedding/Countdown";
 import { Location } from "@/components/wedding/Location";
-import { Parking } from "@/components/wedding/Parking";
 import { VenueInfo } from "@/components/wedding/VenueInfo";
 import { Accounts } from "@/components/wedding/Accounts";
 import { Rsvp } from "@/components/wedding/Rsvp";
@@ -30,8 +29,6 @@ function Index() {
         <Countdown />
         <Divider />
         <Location />
-        <Divider />
-        <Parking />
         <Divider />
         <VenueInfo />
         <Divider />
