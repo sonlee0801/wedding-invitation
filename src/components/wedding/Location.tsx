@@ -1,8 +1,7 @@
-import { MapPin, Navigation, Car, Train } from "lucide-react";
+import { MapPin, Navigation, Car, Train, Bus } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import mapImg from "@/assets/map.jpg";
 
-const ADDRESS = "경기도 안산시 단원구 광덕1로 171, AW웨딩컨벤션";
+const ADDRESS = "경기도 안산시 단원구 광덕1로 171";
 
 export function Location() {
   const naver = `https://map.naver.com/v5/search/${encodeURIComponent(ADDRESS)}`;
@@ -11,10 +10,10 @@ export function Location() {
     <section className="px-6 py-8">
       <h3 className="mb-4 text-center font-serif-ko text-lg text-foreground">오시는 길</h3>
       <div className="overflow-hidden rounded-2xl border border-border">
-        <img
-          src={mapImg}
-          alt="AW웨딩컨벤션 오시는 길 약도"
-          className="block w-full"
+        <iframe
+          title="지도"
+          className="block h-56 w-full"
+          src={`https://maps.google.com/maps?q=${encodeURIComponent(ADDRESS)}&output=embed`}
         />
       </div>
       <div className="mt-4 flex items-start gap-2 text-sm text-foreground/85">
@@ -32,6 +31,20 @@ export function Location() {
             <Navigation className="mr-1 h-4 w-4" /> 카카오맵
           </a>
         </Button>
+      </div>
+      <div className="mt-5 space-y-3 rounded-xl bg-secondary/40 p-4 text-sm text-foreground/85">
+        <div className="flex gap-3">
+          <Car className="h-4 w-4 shrink-0 text-primary mt-0.5" />
+          <p><span className="font-bold text-primary">주차</span> · 인근 공영주차장 및 주차타워 이용 (아래 주차 안내 참고)</p>
+        </div>
+        <div className="flex gap-3">
+          <Train className="h-4 w-4 shrink-0 text-primary mt-0.5" />
+          <p><span className="font-bold text-primary">대중교통</span> · 지하철 4호선 중앙역 도보 7분</p>
+        </div>
+        <div className="flex gap-3">
+          <Bus className="h-4 w-4 shrink-0 text-primary mt-0.5" />
+          <p><span className="font-bold text-primary">셔틀버스</span><br />고잔역(4호선) 2번 출구 - 셔틀버스 운행(5~7분 간격) / 도보 15~20분</p>
+        </div>
       </div>
     </section>
   );
