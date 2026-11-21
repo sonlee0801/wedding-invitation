@@ -10,10 +10,10 @@ export function Location() {
     <section className="px-6 py-8">
       <h3 className="mb-4 text-center font-serif-ko text-lg text-foreground">오시는 길</h3>
       <div className="overflow-hidden rounded-2xl border border-border">
-        <iframe
-          title="지도"
-          className="block h-56 w-full"
-          src={`https://maps.google.com/maps?q=${encodeURIComponent(ADDRESS)}&output=embed`}
+        <img
+          src={mapImg}
+          alt="AW웨딩컨벤션 오시는 길 약도"
+          className="block w-full"
         />
       </div>
       <div className="mt-4 flex items-start gap-2 text-sm text-foreground/85">
